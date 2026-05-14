@@ -8,6 +8,7 @@ import { FooterSection } from "./footer-section";
 import { HeroSection } from "./hero-section";
 import { ProcessSection } from "./process-section";
 import { ProjectsSection } from "./projects-section";
+import { ScrollVideoSection } from "./scroll-video-section";
 
 export function PortfolioHomePage() {
   return (
@@ -27,6 +28,7 @@ export function PortfolioHomePage() {
       <ExperienceSection />
       <ProjectsSection />
       <ProcessSection />
+      <ScrollVideoSection />
       <FooterSection />
     </main>
   );

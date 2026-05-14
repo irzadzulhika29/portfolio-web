@@ -10,6 +10,7 @@ import {
 import { processSteps } from "./content";
 import { SectionShell } from "./section-primitives";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { Cursor } from "@/components/ui/inverted-cursor";
 
 const stepIcons = [Target, Box, Zap, ShieldCheck];
 const supportItems = [
@@ -115,7 +116,10 @@ function ProcessHeader() {
 
 export function ProcessSection() {
   return (
-    <SectionShell id="process">
+    <SectionShell id="process" className="relative cursor-none">
+      {/* Inverted Cursor - only active in this section */}
+      <Cursor size={80} containerId="process" />
+      
       <ContainerScroll titleComponent={<ProcessHeader />}>
         <div className="grid h-full gap-4 overflow-y-auto lg:grid-cols-[1.08fr_1fr_1fr]">
           <div className="panel relative flex min-h-[18rem] flex-col overflow-hidden p-6 sm:p-8 lg:row-span-2">
