@@ -38,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const sectionIds = ["top", "about", "projects", "contact"];
+    const sectionIds = ["top", "about", "experience", "projects", "contact"];
 
     const updateActiveSection = () => {
       const triggerLine = Math.min(window.innerHeight * 0.35, 220);
@@ -52,6 +52,10 @@ const Navbar = () => {
           current = `#${id}`;
           break;
         }
+      }
+
+      if (current === "#experience") {
+        current = "#about";
       }
 
       if (current === "#top") {
@@ -82,7 +86,7 @@ const Navbar = () => {
         href="#top"
         className={cn(
           'inline-flex items-center text-5xl font-black tracking-[-0.04em] leading-none [text-shadow:0_0_0.01px_currentColor] transition-colors duration-200',
-          activeSection === "#about" || activeSection === "#projects"
+          isAboutSection
             ? "text-black"
             : "text-white"
         )}
