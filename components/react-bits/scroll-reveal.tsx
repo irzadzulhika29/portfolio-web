@@ -53,6 +53,13 @@ function splitNode(node: ReactNode, keyPrefix = "node"): ReactNode[] {
 
   if (isValidElement(node)) {
     const element = node as React.ReactElement<{ children?: ReactNode }>;
+
+    if (typeof element.type === "string" && element.type === "br") {
+      return [
+        <span key={keyPrefix} aria-hidden="true" className="block h-4 w-full" />,
+      ];
+    }
+
     const processedChildren = splitNode(
       element.props.children,
       `${keyPrefix}-child`

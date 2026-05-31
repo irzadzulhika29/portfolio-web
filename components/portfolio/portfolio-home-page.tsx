@@ -13,7 +13,7 @@ import { ScrollVideoSection } from "./scroll-video-section";
 export function PortfolioHomePage() {
   return (
     <main className="relative overflow-x-hidden bg-background text-foreground">
-      <AssistantTerminal />
+      {/* <AssistantTerminal /> */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_32%),linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_20%),linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:auto,auto,72px_72px,72px_72px] opacity-60"

@@ -40,7 +40,7 @@ export type CertificationEntry = {
 
 export const portfolioProjects: ProjectEntry[] = [
   {
-    title: "AI Portfolio Assistant",
+    title: "IFL Chapter Malang",
     category: "AI Engineering + Web Development",
     description:
       "An AI assistant integrated into a personal portfolio to help visitors explore profile, skills, projects, and contact information.",
@@ -59,7 +59,7 @@ export const portfolioProjects: ProjectEntry[] = [
     image: portfolioProjectAssets.aiPortfolioAssistant,
   },
   {
-    title: "Modern Company Profile Website",
+    title: "Arteri Learning",
     category: "Web Development",
     description:
       "A responsive company profile website with modern UI, optimized layout, and clean component structure.",
@@ -78,7 +78,7 @@ export const portfolioProjects: ProjectEntry[] = [
     image: portfolioProjectAssets.companyProfileWebsite,
   },
   {
-    title: "Analytics Dashboard System",
+    title: "Akademi Competition",
     category: "Dashboard Design + Frontend Engineering",
     description:
       "A metrics-driven dashboard concept focused on operational clarity, data hierarchy, and smooth interactions across desktop layouts.",

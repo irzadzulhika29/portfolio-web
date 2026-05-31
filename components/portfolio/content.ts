@@ -1,15 +1,5 @@
 export const experienceEntries = [
   {
-    period: "Feb 2024 - Jun 2024",
-    role: "Teaching Assistant of SQL Programming",
-    company: "FILKOM Universitas Brawijaya",
-  },
-  {
-    period: "Aug 2025 - Dec 2025",
-    role: "Teaching Assistant of Database Administration",
-    company: "FILKOM Universitas Brawijaya",
-  },
-  {
     period: "2025 - Present",
     role: "Frontend Developer",
     company: "Akademi Competition",
@@ -18,6 +8,16 @@ export const experienceEntries = [
     period: "2025 - Present",
     role: "Manager of Information System",
     company: "IFL Chapter Malang",
+  },
+  {
+    period: "Aug 2025 - Dec 2025",
+    role: "Teaching Assistant of Database Administration",
+    company: "FILKOM Universitas Brawijaya",
+  },
+  {
+    period: "Feb 2024 - Jun 2024",
+    role: "Teaching Assistant of SQL Programming",
+    company: "FILKOM Universitas Brawijaya",
   },
 ];
 

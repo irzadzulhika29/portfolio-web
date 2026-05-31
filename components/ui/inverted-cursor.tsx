@@ -9,7 +9,7 @@ interface CursorProps {
 
 export const Cursor: React.FC<CursorProps> = ({ size = 60, containerId }) => {
   const cursorRef = useRef<HTMLDivElement>(null)
-  const requestRef = useRef<number>()
+  const requestRef = useRef<number | undefined>(undefined)
   const previousPos = useRef({ x: -size, y: -size })
 
   const [visible, setVisible] = useState(false)
