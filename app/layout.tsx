@@ -3,6 +3,7 @@ import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { WelcomeScreen } from "@/components/welcome-screen";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -31,6 +32,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <WelcomeScreen />
         <SmoothScroll />
         <Navbar />
         {children}

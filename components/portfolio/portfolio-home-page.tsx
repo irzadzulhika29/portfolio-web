@@ -4,11 +4,14 @@ import { AboutSection } from "./about-section";
 import { ExperienceSection } from "./experience-section";
 import { FooterSection } from "./footer-section";
 import { HeroSection } from "./hero-section";
+import { IntroGreeting } from "./intro-greeting";
 import { ProjectsSection } from "./projects-section";
 
 export function PortfolioHomePage() {
   return (
-    <main className="relative overflow-x-hidden bg-background text-foreground">
+    <>
+      <IntroGreeting />
+      <main className="relative overflow-x-hidden bg-background text-foreground">
       {/* <AssistantTerminal /> */}
       <div
         aria-hidden="true"
@@ -24,6 +27,7 @@ export function PortfolioHomePage() {
       <ExperienceSection />
       <ProjectsSection />
       <FooterSection />
-    </main>
+      </main>
+    </>
   );
 }

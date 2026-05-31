@@ -7,24 +7,6 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isAboutSection, setIsAboutSection] = useState(false);
   const [activeSection, setActiveSection] = useState("#top");
-  const [showMobileGreeting, setShowMobileGreeting] = useState(false);
-  const [greetingIndex, setGreetingIndex] = useState(0);
-  const [greetingPopKey, setGreetingPopKey] = useState(0);
-  const [isClosingGreeting, setIsClosingGreeting] = useState(false);
-
-  const greetings = [
-    'Halo',
-    'Sampurasun',
-    'Hello',
-    '\u041f\u0440\u0438\u0432\u0435\u0442',
-    '\u0645\u0631\u062d\u0628\u0627',
-    '\u4f60\u597d',
-    '\u3053\u3093\u306b\u3061\u306f',
-    '\uc548\ub155\ud558\uc138\uc694',
-    '\u05e9\u05dc\u05d5\u05dd',
-    'Hola',
-    'Ciao',
-  ];
 
   const navItems = [
     { label: 'Home', href: '#top' },
@@ -93,36 +75,6 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
-    if (!isMobile) return;
-
-    setShowMobileGreeting(true);
-    setIsClosingGreeting(false);
-    setGreetingIndex(0);
-    setGreetingPopKey(1);
-
-    let currentIndex = 0;
-    const switchInterval = window.setInterval(() => {
-      currentIndex += 1;
-      if (currentIndex >= greetings.length) {
-        window.clearInterval(switchInterval);
-        setIsClosingGreeting(true);
-        window.setTimeout(() => {
-          setShowMobileGreeting(false);
-          setIsClosingGreeting(false);
-        }, 420);
-        return;
-      }
-      setGreetingIndex(currentIndex);
-      setGreetingPopKey((prev) => prev + 1);
-    }, 430);
-
-    return () => {
-      window.clearInterval(switchInterval);
-    };
-  }, [greetings.length]);
-
   const navContent = (
     <div className="w-full flex items-center justify-between">
       {/* Logo */}
@@ -168,36 +120,13 @@ const Navbar = () => {
 
   return (
     <>
-      {showMobileGreeting ? (
-        <div
-          className={cn(
-            'pointer-events-none fixed inset-0 z-[70] flex items-center justify-center bg-[linear-gradient(145deg,rgba(6,10,20,0.72),rgba(20,6,30,0.58))] backdrop-blur-xl md:hidden',
-            isClosingGreeting
-              ? '[animation:greeting-overlay-close_420ms_cubic-bezier(.4,0,.2,1)_forwards]'
-              : '[animation:greeting-overlay-open_220ms_ease-out_both]'
-          )}
-        >
-          <span
-            key={greetingPopKey}
-            className={cn(
-              'text-5xl font-black tracking-[-0.04em] text-white',
-              isClosingGreeting
-                ? '[animation:greeting-text-close_420ms_cubic-bezier(.4,0,.2,1)_forwards]'
-                : '[animation:greeting-pop_420ms_cubic-bezier(.2,.9,.2,1)_both]'
-            )}
-          >
-            {greetings[greetingIndex]}
-          </span>
-        </div>
-      ) : null}
-
       <header
         className={cn(
           'pointer-events-none fixed z-50',
           'inset-x-0 top-4'
         )}
       >
-      <div className={cn('md:hidden', showMobileGreeting && 'invisible')} data-about={isAboutSection || undefined}>
+      <div className="md:hidden" data-about={isAboutSection || undefined}>
         <StaggeredMenu
           isFixed
           position="right"
@@ -239,23 +168,6 @@ const Navbar = () => {
       </header>
       <style>{`
         [data-about] .staggered-menu-wrapper a[aria-label="Go to top"] { color: #111 !important; }
-        @keyframes greeting-overlay-open {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        @keyframes greeting-overlay-close {
-          0% { opacity: 1; backdrop-filter: blur(16px); }
-          100% { opacity: 0; backdrop-filter: blur(0px); }
-        }
-        @keyframes greeting-pop {
-          0% { opacity: 0; transform: translateY(42px) scale(0.92); }
-          65% { opacity: 1; transform: translateY(-3px) scale(1.02); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes greeting-text-close {
-          0% { opacity: 1; transform: translateY(0) scale(1); }
-          100% { opacity: 0; transform: translateY(18px) scale(0.98); }
-        }
       `}</style>
     </>
   );

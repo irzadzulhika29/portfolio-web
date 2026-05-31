@@ -347,9 +347,9 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       <style>{`
         .sm-scope .sm-toggle { color: #e9e9ef; }
         .sm-scope .sm-toggle:focus-visible { outline: 2px solid #ffffffaa; outline-offset: 4px; border-radius: 4px; }
-        .sm-scope .staggered-menu-panel { width: min(100vw, 420px); }
+        .sm-scope .staggered-menu-panel { width: min(100vw, 420px); opacity: 0; }
         .sm-scope [data-position='left'] .staggered-menu-panel { left: 0; right: auto; }
-        .sm-scope .sm-prelayers { width: min(100vw, 420px); }
+        .sm-scope .sm-prelayers { width: min(100vw, 420px); opacity: 0; }
         .sm-scope [data-position='left'] .sm-prelayers { left: 0; right: auto; }
         .sm-scope .sm-panel-item:hover { color: var(--sm-accent, #2f4539); }
         .sm-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }
