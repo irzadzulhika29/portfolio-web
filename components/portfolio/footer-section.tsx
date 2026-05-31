@@ -30,7 +30,18 @@ export function FooterSection() {
       id="site-footer"
       className="relative overflow-hidden border-t border-white/10 bg-black text-white"
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-16 px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
+      {/* Background video */}
+      <video
+        className="absolute inset-0 h-full w-full object-contain lg:object-cover opacity-40"
+        src="/hero/hero_animation.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-16 px-5 py-16 sm:px-6 lg:px-8 lg:py-20 z-10">
         <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <h2 className="max-w-4xl text-5xl font-semibold uppercase leading-[1.08] tracking-[-0.08em] text-white sm:text-6xl lg:text-[5.5rem]">

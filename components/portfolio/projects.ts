@@ -9,7 +9,7 @@ export type ProjectEntry = {
   result: string;
   previewBadge: string;
   previewTitle: string;
-  previewMetric: string;
+  previewastra: string;
   palette: {
     shell: string;
     glow: string;
@@ -23,7 +23,7 @@ export type AchievementEntry = {
   title: string;
   label: string;
   description: string;
-  metric: string;
+  astra: string;
   palette?: {
     shell: string;
     glow: string;
@@ -49,7 +49,7 @@ export const portfolioProjects: ProjectEntry[] = [
     result: "Turns a static portfolio into an intelligent, guided discovery experience.",
     previewBadge: "Conversational UI",
     previewTitle: "Visitor guidance with an AI-first interface.",
-    previewMetric: "Live intent-based exploration flow",
+    previewastra: "Live intent-based exploration flow",
     palette: {
       shell: "from-[#10131d] via-[#121b2b] to-[#090b12]",
       glow: "from-cyan-400/30 via-sky-500/10 to-transparent",
@@ -68,7 +68,7 @@ export const portfolioProjects: ProjectEntry[] = [
     result: "Premium presentation with performance-focused delivery across devices.",
     previewBadge: "Brand Website",
     previewTitle: "Structured pages with premium editorial rhythm.",
-    previewMetric: "Responsive presentation across every breakpoint",
+    previewastra: "Responsive presentation across every breakpoint",
     palette: {
       shell: "from-[#201816] via-[#3e281d] to-[#120f12]",
       glow: "from-amber-200/35 via-orange-400/10 to-transparent",
@@ -81,13 +81,13 @@ export const portfolioProjects: ProjectEntry[] = [
     title: "Akademi Competition",
     category: "Dashboard Design + Frontend Engineering",
     description:
-      "A metrics-driven dashboard concept focused on operational clarity, data hierarchy, and smooth interactions across desktop layouts.",
+      "A astras-driven dashboard concept focused on operational clarity, data hierarchy, and smooth interactions across desktop layouts.",
     techStack: ["Next.js", "Dashboard UI", "Charts", "Tailwind CSS"],
     role: "Information hierarchy, interaction design, component implementation.",
     result: "Turns complex reporting into a cleaner monitoring experience for day-to-day decision making.",
     previewBadge: "Dashboard System",
     previewTitle: "A cleaner command center for operational visibility.",
-    previewMetric: "Structured monitoring with stronger visual hierarchy",
+    previewastra: "Structured monitoring with stronger visual hierarchy",
     palette: {
       shell: "from-[#101726] via-[#172239] to-[#0a0f18]",
       glow: "from-blue-300/30 via-cyan-400/10 to-transparent",
@@ -101,11 +101,23 @@ export const portfolioProjects: ProjectEntry[] = [
 
 export const portfolioAchievements: AchievementEntry[] = [
   {
-    title: "AI-First Product Thinking",
+    title: "2nd Place in Hackathon 2026",
+    label: "Project",
+    description:
+      "Achievement related to Astra project or organization.",
+    astra: "Completed milestone",
+    palette: {
+      shell: "from-[#1a1a2e] via-[#16213e] to-[#0f3460]",
+      glow: "from-blue-400/30 via-indigo-500/10 to-transparent",
+    },
+    image: portfolioAchievementAssets.astra,
+  },
+  {
+    title: "Top 7 Finalist in Hology Data Mining",
     label: "Workflow Design",
     description:
       "Transforms static interfaces into guided, interactive product journeys with AI-assisted discovery and clear user intent mapping.",
-    metric: "From passive browsing to assisted exploration",
+    astra: "From passive browsing to assisted exploration",
     palette: {
       shell: "from-[#10131d] via-[#121b2b] to-[#090b12]",
       glow: "from-cyan-400/30 via-sky-500/10 to-transparent",

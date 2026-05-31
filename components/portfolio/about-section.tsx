@@ -44,7 +44,7 @@ function PhotoCard3D() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ ...style, transformStyle: "preserve-3d", willChange: "transform" }}
-      className="relative mt-8 w-full max-w-[260px] aspect-[3/4] rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.22)] cursor-pointer overflow-hidden bg-red-500 lg:hidden"
+      className="relative mt-4 w-full max-w-[260px] aspect-[3/4] rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.22)] cursor-pointer overflow-hidden bg-red-500 lg:mt-8 lg:hidden"
     >
       {/* Background image */}
       <Image
@@ -94,7 +94,7 @@ export function AboutSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.72),transparent_45%)]"
       />
-      <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-16 px-5 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:px-8 lg:pb-24 lg:pt-0">
+      <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-center gap-2 px-5 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:px-8 lg:pb-24 lg:pt-0">
         <div className="relative flex flex-col items-center justify-center">
           <p className="font-serif text-3xl italic tracking-[-0.04em] text-black/55 sm:text-4xl">
             Who I Am
@@ -107,20 +107,14 @@ export function AboutSection() {
             >
               PROFILE
             </div>
-            <div className="relative z-10 hidden lg:block">
-              <div className="text-5xl font-semibold leading-[0.8] tracking-[-0.1em] text-black sm:text-[6.5rem] lg:text-[8.8rem]">
+            <div className="relative z-10">
+              <div className="hidden lg:block text-5xl font-semibold leading-[0.8] tracking-[-0.1em] text-black sm:text-[6.5rem] lg:text-[8.8rem]">
                 <div>I&apos;m</div>
                 <div>IRZAA</div>
               </div>
-              <p className="mt-5 text-lg uppercase tracking-[0.32em] text-black/78 sm:text-2xl">
+              <p className="hidden lg:block mt-5 text-lg uppercase tracking-[0.32em] text-black/78 sm:text-2xl">
                 Full Stack Developer
               </p>
-              <a href="#contact">
-                <Button className="mt-8 h-14 rounded-full bg-black px-7 text-base font-medium text-white hover:bg-black/90">
-                  Let&apos;s Connect
-                  <ChevronRight className="size-5" />
-                </Button>
-              </a>
             </div>
           </div>
         </div>
@@ -130,38 +124,32 @@ export function AboutSection() {
             <div
               className={`${openSans.className} w-full max-w-[100vh] text-md leading-[1.7] text-black sm:text-md`}
             >
+              <div className="border-l-2 border-black/30 pl-6">
               <ScrollReveal
                 baseOpacity={0.05}
                 enableBlur={true}
                 baseRotation={3}
                 blurStrength={14}
                 containerClassName="my-0"
-                textClassName="!text-2xl leading-[1.65] font-light text-black"
+                textClassName="!text-sm md:!text-2xl leading-[1.65] font-light text-black"
                 rotationStart="top bottom+=40%"
                 rotationEnd="top 70%"
                 wordAnimationStart="top bottom+=35%"
                 wordAnimationEnd="top 30%"
               >
                 <>
-                  Hi, I&apos;m <span className="font-semibold italic">Irza</span>.{" "}
-                  I&apos;m an Information Systems student passionate about web
-                  development, AI/ML, automation, and quality assurance.
-                  <br className="mt-10"/>
-                  I focus on building modern, interactive, and reliable digital products
-                  by combining clean web development, intelligent systems, and
-                  structured testing.
-                  <br />
-                  I&apos;m familiar with technologies such as{" "}
-                  <span className="font-semibold">Next.js</span>,{" "}
-                  <span className="font-semibold">Express.js</span>,{" "}
-                  <span className="font-semibold">PyTorch</span>,{" "}
-                  <span className="font-semibold">TensorFlow</span>, and other
-                  modern tools that help me turn ideas into functional and
-                  scalable solutions.
-                  I&apos;m always open to learning, collaborating, and working on
-                  meaningful technology-driven projects.
-                </>
+                 As an Information Systems graduate and Software Engineer, I specialize in translating complex business needs into efficient web applications.
+
+From digitizing operational workflows to architecting frontend interfaces, I thrive on building scalable full-stack solutions from the ground up that deliver real-world impact.
+                 </>
               </ScrollReveal>
+              </div>
+              <a href="#contact" className="mt-4 lg:mt-8 inline-block">
+                <Button className="h-12 rounded-full bg-black px-4 text-sm font-medium text-white hover:bg-black/90">
+                  Let&apos;s Connect
+                  <ChevronRight className="size-5" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>

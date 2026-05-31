@@ -7,21 +7,28 @@ import type { ProjectEntry } from "./projects";
 export function ProjectShowcaseCard({
   project,
   index,
+  onSelect,
+  large,
 }: {
   project: ProjectEntry;
   index: number;
+  onSelect?: () => void;
+  large?: boolean;
 }) {
   return (
-    <article className="group relative overflow-hidden rounded-[2rem] border border-zinc-400/70 bg-[#0a0a0d] text-white shadow-[0_12px_24px_rgba(39,39,42,0.12),0_28px_80px_rgba(113,113,122,0.24),0_3px_0_rgba(228,228,231,0.28)]">
+    <article
+      onClick={onSelect}
+      className={`group relative overflow-hidden bg-[#0a0a0d] text-white shadow-[0_12px_24px_rgba(39,39,42,0.12),0_28px_80px_rgba(113,113,122,0.24),0_3px_0_rgba(228,228,231,0.28)] cursor-pointer ${large ? "h-full" : ""}`}
+    >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-6 -bottom-4 h-10 rounded-full bg-zinc-500/25 blur-2xl"
+        className="pointer-events-none absolute inset-x-6 -bottom-4 h-10 bg-zinc-500/25 blur-2xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/12 shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-8px_20px_rgba(24,24,27,0.28)]"
+        className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/12 shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-8px_20px_rgba(24,24,27,0.28)]"
       />
-      <div className={cn("relative min-h-[20rem] overflow-hidden bg-gradient-to-br", project.palette.shell)}>
+      <div className={cn(`relative overflow-hidden bg-gradient-to-br ${large ? "h-full min-h-[20rem]" : "min-h-[20rem]"}`, project.palette.shell)}>
         {project.image ? (
           <Image
             src={project.image}
@@ -47,10 +54,10 @@ export function ProjectShowcaseCard({
           className="absolute inset-0 bg-[linear-gradient(135deg,rgba(5,7,10,0.08)_0%,rgba(5,7,10,0.74)_100%)] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
         />
 
-        <div className="relative flex min-h-[20rem] flex-col justify-between p-5 sm:p-6">
+        <div className={`relative flex flex-col justify-between p-5 sm:p-6 ${large ? "h-full min-h-[20rem]" : "min-h-[20rem]"}`}>
           <div className="flex items-start justify-between">
            
-            <span className="rounded-full border border-white/10 bg-black/24 px-2.5 py-0.5 text-[0.65rem] uppercase tracking-[0.22em] text-white/48 backdrop-blur-md transition-all duration-500 group-hover:translate-y-1 group-hover:opacity-0">
+            <span className="border border-white/10 bg-black/24 px-2.5 py-0.5 text-[0.65rem] uppercase tracking-[0.22em] text-white/48 backdrop-blur-md transition-all duration-500 group-hover:translate-y-1 group-hover:opacity-0">
               0{index + 1}
             </span>
           </div>
@@ -71,16 +78,16 @@ export function ProjectShowcaseCard({
             <div className="max-w-xl translate-y-8 transition-transform duration-500 ease-out group-hover:translate-y-0">
              
               <div className="mt-5 flex flex-wrap gap-2.5">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-white/12 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/18"
+                <button
+                  onClick={(e) => { e.stopPropagation(); onSelect?.(); }}
+                  className="inline-flex cursor-pointer items-center gap-2.5 bg-white/12 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/18"
                 >
                   <ArrowUpRight className="size-4" />
                   Lihat Details
-                </a>
+                </button>
                 <a
                   href={project.image ?? "#projects"}
-                  className="inline-flex items-center gap-2.5 rounded-full bg-white/8 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
+                  className="inline-flex items-center gap-2.5 bg-white/8 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-colors duration-200 hover:bg-white/14"
                 >
                   <Eye className="size-4" />
                   Preview

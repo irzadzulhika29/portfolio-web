@@ -197,7 +197,7 @@ const Navbar = () => {
           'inset-x-0 top-4'
         )}
       >
-      <div className={cn('md:hidden', showMobileGreeting && 'invisible')}>
+      <div className={cn('md:hidden', showMobileGreeting && 'invisible')} data-about={isAboutSection || undefined}>
         <StaggeredMenu
           isFixed
           position="right"
@@ -238,6 +238,7 @@ const Navbar = () => {
       </div>
       </header>
       <style>{`
+        [data-about] .staggered-menu-wrapper a[aria-label="Go to top"] { color: #111 !important; }
         @keyframes greeting-overlay-open {
           0% { opacity: 0; }
           100% { opacity: 1; }

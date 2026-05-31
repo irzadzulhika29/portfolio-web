@@ -6,4 +6,5 @@ export const portfolioProjectAssets = {
 
 export const portfolioAchievementAssets = {
   hology: "/achievements/hology.jpeg",
+  astra: "/achievements/astra.png",
 } as const;

@@ -1,14 +1,10 @@
 "use client";
 
-import { AssistantTerminal } from "./assistant-terminal";
 import { AboutSection } from "./about-section";
-import { AssistantFeatureSection } from "./assistant-feature-section";
 import { ExperienceSection } from "./experience-section";
 import { FooterSection } from "./footer-section";
 import { HeroSection } from "./hero-section";
-import { ProcessSection } from "./process-section";
 import { ProjectsSection } from "./projects-section";
-import { ScrollVideoSection } from "./scroll-video-section";
 
 export function PortfolioHomePage() {
   return (
@@ -27,8 +23,6 @@ export function PortfolioHomePage() {
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />
-      <ProcessSection />
-      <ScrollVideoSection />
       <FooterSection />
     </main>
   );

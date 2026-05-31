@@ -102,7 +102,7 @@ export default function ScrollFloat({
   return (
     <h2 ref={containerRef} className={`overflow-hidden ${containerClassName}`.trim()}>
       <span
-        className={`block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`.trim()}
+        className={`block leading-[1.5] ${textClassName}`.trim()}
       >
         {splitText}
       </span>

@@ -56,7 +56,7 @@ export function ExperienceSection() {
           <div className="leading-[0.84] tracking-[-0.08em]">
             <ScrollFloat
               containerClassName="my-0"
-              textClassName="text-[5rem] font-semibold uppercase text-white sm:text-[5rem] lg:text-[7rem] leading-[0.84] tracking-[-0.08em]"
+              textClassName="text-5xl font-semibold uppercase text-white sm:text-[5rem] lg:text-[7rem] leading-[0.84] tracking-[-0.08em]"
               animationDuration={1.3}
               ease="power3.out"
               scrollStart="top bottom-=2%"
@@ -67,7 +67,7 @@ export function ExperienceSection() {
             </ScrollFloat>
             <ScrollFloat
               containerClassName="-mt-2 my-0"
-              textClassName="text-[5rem] font-semibold uppercase text-zinc-500 sm:text-[5rem] lg:text-[7rem] leading-[0.84] tracking-[-0.08em]"
+              textClassName="text-5xl font-semibold uppercase text-zinc-500 sm:text-[5rem] lg:text-[7rem] leading-[0.84] tracking-[-0.08em]"
               animationDuration={1.3}
               ease="power3.out"
               scrollStart="top bottom+=4%"
