@@ -106,7 +106,7 @@ export function ProjectsSection() {
                 align="center"
               />
               <motion.div
-                className="grid gap-6 xl:grid-cols-3"
+                className="grid gap-6 md:grid-cols-2"
                 variants={sectionReveal}
                 initial="hidden"
                 whileInView="visible"
@@ -116,12 +116,12 @@ export function ProjectsSection() {
                   <motion.div
                     key={achievement.title}
                     variants={cardReveal}
-                    className={index === 0 ? "xl:col-span-2 xl:row-span-2" : ""}
+                    className="h-full"
                   >
                     <AchievementShowcaseCard
                       achievement={achievement}
                       index={index}
-                      large={index === 0}
+                      large={true}
                       onSelect={() => setDetailItem({ type: "achievement", data: achievement })}
                     />
                   </motion.div>
