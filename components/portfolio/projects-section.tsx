@@ -12,6 +12,7 @@ import { ProjectShowcaseCard } from "./project-showcase-card";
 import { AchievementShowcaseCard } from "./achievement-showcase-card";
 import { SectionHeading } from "./section-primitives";
 import { DetailOverlay } from "./detail-overlay";
+import { HighlightText } from "@/components/animate-ui/primitives/texts/highlight";
 import type { DetailItem } from "./detail-overlay";
 
 const sectionReveal = {
@@ -65,7 +66,13 @@ export function ProjectsSection() {
             <div className="relative -mx-5 space-y-10 bg-black px-5 py-20 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 lg:py-24">
               <SectionHeading
                 eyebrow="Selected Projects"
-                title="Featured Works"
+                title={
+                  <HighlightText
+                    text="Featured Works"
+                    inView={true}
+                    className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-500 dark:to-purple-500 px-3 py-1 rounded-none text-zinc-900 dark:text-white"
+                  />
+                }
                 description="A set of portfolio pieces presented as visible product surfaces rather than plain case-study entries."
                 titleClassName="text-white"
                 descriptionClassName="text-zinc-400"
@@ -99,7 +106,13 @@ export function ProjectsSection() {
             <div className="-mx-5 space-y-10 bg-black px-5 py-20 text-white sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 lg:py-24">
               <SectionHeading
                 eyebrow="Key Achievements"
-                title="Achievements & Outcomes"
+                title={
+                  <HighlightText
+                    text="Achievements"
+                    inView={true}
+                    className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-500 dark:to-purple-500 px-3 py-1 rounded-none text-zinc-900 dark:text-white"
+                  />
+                }
                 description="These outcomes describe how the portfolio translates into product instincts, interface quality, and operational clarity."
                 titleClassName="text-white"
                 descriptionClassName="text-zinc-400"

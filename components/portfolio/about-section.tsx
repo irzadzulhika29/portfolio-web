@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react";
 import { Open_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
+import { motion } from "framer-motion";
 import ScrollReveal from "@/components/react-bits/scroll-reveal";
 import { Button } from "@/components/ui/button";
 
@@ -144,12 +145,19 @@ From digitizing operational workflows to architecting frontend interfaces, I thr
                  </>
               </ScrollReveal>
               </div>
-              <a href="#contact" className="mt-4 lg:mt-8 inline-block">
+              <motion.a
+                href="#contact"
+                className="mt-4 lg:mt-8 inline-block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              >
                 <Button className="h-12 rounded-full bg-black px-4 text-sm font-medium text-white hover:bg-black/90">
                   Let&apos;s Connect
                   <ChevronRight className="size-5" />
                 </Button>
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>

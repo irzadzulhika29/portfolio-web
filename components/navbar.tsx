@@ -146,7 +146,7 @@ const Navbar = () => {
           displaySocials
           displayItemNumbering
           menuButtonColor={isAboutSection ? '#111111' : '#f4f4f5'}
-          openMenuButtonColor="#111111"
+          openMenuButtonColor="#ffffff"
           changeMenuColorOnOpen
           accentColor="#2f4539"
           logoUrl="/ir-mark.svg"
@@ -171,7 +171,7 @@ const Navbar = () => {
       </div>
       </header>
       <style>{`
-        [data-about] .staggered-menu-wrapper a[aria-label="Go to top"] { color: #111 !important; }
+        [data-about] .staggered-menu-wrapper:not([data-open="true"]) a[aria-label="Go to top"] { color: #111 !important; }
       `}</style>
     </>
   );

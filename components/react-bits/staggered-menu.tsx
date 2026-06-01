@@ -283,7 +283,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header className="staggered-menu-header pointer-events-none absolute left-0 top-0 z-20 flex w-full items-center justify-between bg-transparent p-6" aria-label="Main navigation header">
-          <a href="#top" className="font-bold text-2xl pointer-events-auto inline-flex items-center select-none" aria-label="Go to top">
+          <a href="#top" className="font-bold text-2xl pointer-events-auto inline-flex items-center select-none text-white transition-colors duration-200" aria-label="Go to top">
          idz
          </a>
 
@@ -307,7 +307,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel pointer-events-auto absolute right-0 top-0 z-10 flex h-full flex-col overflow-y-auto bg-white p-[6em_1.5em_2em_1.5em]"
+          className="staggered-menu-panel pointer-events-auto absolute right-0 top-0 z-10 flex h-full flex-col overflow-y-auto bg-black p-[6em_1.5em_2em_1.5em]"
           aria-hidden={!open}
         >
           <div className="sm-panel-inner flex flex-1 flex-col gap-5">
@@ -315,7 +315,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               {items.map((item, idx) => (
                 <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={item.label + idx}>
                   <a
-                    className="sm-panel-item relative inline-block cursor-pointer pr-[1.9em] text-[clamp(2.5rem,10vw,4rem)] font-semibold uppercase leading-none tracking-[-2px] text-black no-underline transition-colors duration-200"
+                    className="sm-panel-item relative inline-block cursor-pointer pr-[1.9em] text-[clamp(2.5rem,10vw,4rem)] font-semibold uppercase leading-none tracking-[-2px] text-white no-underline transition-colors duration-200"
                     href={item.link}
                     aria-label={item.ariaLabel}
                     onClick={closeMenu}
@@ -332,7 +332,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 <ul className="sm-socials-list m-0 flex list-none flex-wrap items-center gap-4 p-0" role="list">
                   {socialItems.map((social, i) => (
                     <li key={social.label + i}>
-                      <a href={social.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link inline-block py-[2px] text-[1.05rem] font-medium text-[#111] no-underline">
+                      <a href={social.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link inline-block py-[2px] text-[1.05rem] font-medium text-white no-underline">
                         {social.label}
                       </a>
                     </li>

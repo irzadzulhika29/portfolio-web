@@ -1,3 +1,4 @@
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export function SectionHeading({
@@ -9,7 +10,7 @@ export function SectionHeading({
   descriptionClassName,
 }: {
   eyebrow: string;
-  title: string;
+  title: string | React.ReactNode;
   description: string;
   align?: "left" | "center";
   eyebrowClassName?: string;
