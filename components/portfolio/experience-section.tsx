@@ -1,25 +1,38 @@
 "use client";
 
+import { Open_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700", "800"],
+});
+
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import ScrollFloat from "@/components/react-bits/scroll-float";
 import { experienceEntries } from "./content";
 import { SectionShell } from "./section-primitives";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/animate-ui/components/radix/accordion';
 
 interface AnimatedExperienceItemProps {
   entry: {
     period: string;
     role: string;
     company: string;
+    description?: string;
   };
   index: number;
-  showPlus?: boolean;
 }
 
 function AnimatedExperienceItem({
   entry,
   index,
-  showPlus = true,
 }: AnimatedExperienceItemProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { amount: 0.5, once: false });
@@ -30,20 +43,21 @@ function AnimatedExperienceItem({
       initial={{ scale: 0.95, opacity: 0 }}
       animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.95, opacity: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
-      className="grid gap-6 border-b border-white/10 py-8 lg:grid-cols-[180px_minmax(0,1fr)_280px_40px] lg:items-center"
     >
-      <p className="text-base tracking-[0.08em] text-zinc-500">{entry.period}</p>
-      <h3 className="text-3xl font-semibold tracking-[-0.04em] text-zinc-200 sm:text-2xl lg:text-3xl">
-        {entry.role}
-      </h3>
-      <div className="flex justify-between items-center">
-        <p className="text-xl text-zinc-400 lg:text-right">{entry.company}</p>
-        {showPlus && (
-          <span className="text-3xl font-light text-zinc-400 lg:text-right">
-            +
-          </span>
-        )}
-      </div>
+      <AccordionItem value={`item-${index}`} className="border-b border-white/10">
+        <AccordionTrigger showArrow={true} className="py-8 w-full hover:no-underline hover:opacity-80 transition-opacity">
+          <div className="grid gap-6 w-full text-left lg:grid-cols-[180px_minmax(0,1fr)_280px] lg:items-center pr-4">
+            <p className={cn("text-base tracking-[0.08em] text-zinc-500", openSans.className)}>{entry.period}</p>
+            <h3 className="text-3xl font-semibold tracking-[-0.04em] text-zinc-200 sm:text-2xl lg:text-3xl">
+              {entry.role}
+            </h3>
+            <p className={cn("text-xl text-zinc-400 lg:text-right", openSans.className)}>{entry.company}</p>
+          </div>
+        </AccordionTrigger>
+        <AccordionContent className={cn("text-zinc-400 text-lg leading-relaxed max-w-3xl pb-8 lg:ml-[204px]", openSans.className)}>
+          {entry.description}
+        </AccordionContent>
+      </AccordionItem>
     </motion.article>
   );
 }
@@ -83,16 +97,15 @@ export function ExperienceSection() {
         </div>
 
         {/* Experience List */}
-        <div className="space-y-0">
+        <Accordion type="single" collapsible className="w-full space-y-0">
           {experienceEntries.map((entry, index) => (
             <AnimatedExperienceItem
               key={`${entry.role}-${entry.company}`}
               entry={entry}
               index={index}
-              showPlus={true}
             />
           ))}
-        </div>
+        </Accordion>
       </div>
     </SectionShell>
   );

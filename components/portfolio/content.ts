@@ -3,21 +3,25 @@ export const experienceEntries = [
     period: "2025 - Present",
     role: "Frontend Developer",
     company: "Akademi Competition",
+    description: "Developing and maintaining interactive web interfaces, ensuring a responsive and engaging user experience using Next.js and Tailwind CSS.",
   },
   {
     period: "2025 - Present",
     role: "Manager of Information System",
     company: "IFL Chapter Malang",
+    description: "Managing and optimizing the organization's information systems, overseeing IT infrastructure, and facilitating technological improvements.",
   },
   {
     period: "Aug 2025 - Dec 2025",
     role: "Teaching Assistant of Database Administration",
     company: "FILKOM Universitas Brawijaya",
+    description: "Assisted in evaluating student assignments and guided practical laboratory sessions focusing on database architecture and administration.",
   },
   {
     period: "Feb 2024 - Jun 2024",
     role: "Teaching Assistant of SQL Programming",
     company: "FILKOM Universitas Brawijaya",
+    description: "Supported the learning process by explaining complex SQL queries, database relationships, and query optimization techniques to students.",
   },
 ];
 

@@ -45,7 +45,7 @@ function PhotoCard3D() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ ...style, transformStyle: "preserve-3d", willChange: "transform" }}
-      className="relative mt-4 w-full max-w-[260px] aspect-[3/4] rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.22)] cursor-pointer overflow-hidden bg-red-500 lg:mt-8 lg:hidden"
+      className="relative mt-4 w-full max-w-[260px] aspect-[3/4] rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.22)] cursor-pointer overflow-hidden lg:mt-8 lg:hidden"
     >
       {/* Background image */}
       <Image
@@ -146,7 +146,9 @@ From digitizing operational workflows to architecting frontend interfaces, I thr
               </ScrollReveal>
               </div>
               <motion.a
-                href="#contact"
+                href="https://www.linkedin.com/in/irza-dzulhika/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 lg:mt-8 inline-block"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
