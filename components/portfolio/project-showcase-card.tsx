@@ -34,7 +34,11 @@ export function ProjectShowcaseCard({
             src={project.image}
             alt={`${project.title} preview`}
             fill
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className={cn(
+              project.objectFit || "object-cover",
+              "transition-transform duration-700 ease-out group-hover:scale-[1.04]",
+              project.imageClassName
+            )}
           />
         ) : null}
 

@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 
 const welcomeWords = [
   "Selamat Datang", // Indonesian
-  "Bienvenido",     // Spanish
+  "Wilujeng Sumping", // Sundanese
   "Bienvenue",      // French
-  "Yokoso",         // Japanese
+  "ようこそ",        // Japanese (Yōkoso)
+  "환영합니다",      // Korean (Hwan-yeong-ham-ni-da)
+  "أهلاً وسهلاً",    // Arabic (Ahlan wa sahlan)
   "Welcome",        // English
 ];
 

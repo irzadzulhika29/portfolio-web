@@ -11,8 +11,8 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', href: '#top' },
     { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
   ];
 
   useEffect(() => {
@@ -44,18 +44,15 @@ const Navbar = () => {
       const triggerLine = Math.min(window.innerHeight * 0.35, 220);
       let current = "#top";
 
-      for (const id of sectionIds) {
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
         const el = document.getElementById(id);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        if (rect.top <= triggerLine && rect.bottom > triggerLine) {
+        if (rect.top <= triggerLine) {
           current = `#${id}`;
           break;
         }
-      }
-
-      if (current === "#experience") {
-        current = "#about";
       }
 
       if (current === "#top") {
@@ -101,9 +98,8 @@ const Navbar = () => {
             href={item.href}
             className={cn(
               'relative inline-flex items-center gap-2 overflow-hidden  px-5 py-3 text-[14px] font-medium transition-colors duration-200 before:absolute before:inset-0 before:origin-left before:scale-x-0 before:rounded-sm before:bg-zinc-400/25 before:transition-transform before:duration-300 before:ease-out hover:before:scale-x-100 focus-visible:before:scale-x-100',
-              activeSection === item.href && 'before:scale-x-100',
-              index === 0
-                ? 'text-white'
+              activeSection === item.href 
+                ? 'before:scale-x-100 text-white' 
                 : 'text-white/70 hover:text-white'
             )}
           >
@@ -114,10 +110,10 @@ const Navbar = () => {
 
       {/* Right side: CTA button (pre-scroll) or empty spacer (scrolled) */}
       <a
-        href="#contact"
+        href="#experience"
         className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-white text-zinc-900 text-[14px] font-semibold hover:bg-white/90 transition-colors duration-200 shadow-sm"
       >
-        Contact
+        Experience
       </a>
     </div>
   );

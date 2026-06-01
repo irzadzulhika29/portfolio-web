@@ -17,6 +17,8 @@ export type ProjectEntry = {
     accent: string;
   };
   image?: string;
+  objectFit?: string;
+  imageClassName?: string;
 };
 
 export type AchievementEntry = {
@@ -89,14 +91,34 @@ export const portfolioProjects: ProjectEntry[] = [
     previewTitle: "A cleaner command center for operational visibility.",
     previewastra: "Structured monitoring with stronger visual hierarchy",
     palette: {
-      shell: "from-[#101726] via-[#172239] to-[#0a0f18]",
-      glow: "from-blue-300/30 via-cyan-400/10 to-transparent",
-      panel: "bg-white/8",
-      accent: "bg-blue-300",
+      shell: "from-[#111] via-[#1a1a1a] to-[#0a0a0a]",
+      glow: "from-zinc-500/20 via-zinc-400/10 to-transparent",
+      panel: "bg-white/5",
+      accent: "bg-white",
     },
     image: portfolioProjectAssets.analyticsDashboard,
   },
- 
+  {
+    title: "GreenTrust Passport",
+    category: "Web Development",
+    description:
+      "A platform providing verified green readiness scores for Indonesian MSMEs, backed by on-chain document hashing for trust and transparency.",
+    techStack: ["Next.js", "Tailwind CSS", "Polygon"],
+    role: "Frontend interface and user experience design.",
+    result: "Empowers MSMEs with authentic green credentials.",
+    previewBadge: "Green Verification",
+    previewTitle: "Objective Green Readiness Score",
+    previewastra: "Transparent and tamper-proof records",
+    palette: {
+      shell: "from-[#002f14] via-[#004d22] to-[#001f0d]",
+      glow: "from-emerald-400/30 via-green-500/10 to-transparent",
+      panel: "bg-white/10",
+      accent: "bg-amber-400",
+    },
+    image: portfolioProjectAssets.greenTrust,
+    objectFit: "object-contain",
+    imageClassName: "-rotate-3 scale-95 hover:rotate-0 hover:scale-100",
+  },
 ];
 
 export const portfolioAchievements: AchievementEntry[] = [
