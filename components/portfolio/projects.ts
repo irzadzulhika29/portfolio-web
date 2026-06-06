@@ -43,10 +43,10 @@ export type CertificationEntry = {
 export const portfolioProjects: ProjectEntry[] = [
   {
     title: "IFL Chapter Malang",
-    category: "AI Engineering + Web Development",
+    category: "Web Development",
     description:
       "An AI assistant integrated into a personal portfolio to help visitors explore profile, skills, projects, and contact information.",
-    techStack: ["React", "Tailwind CSS", "LLM API", "Interactive UI"],
+    techStack: ["React.js", "Tailwind CSS", "Laravel"],
     role: "Product design, frontend implementation, AI workflow integration.",
     result: "Turns a static portfolio into an intelligent, guided discovery experience.",
     previewBadge: "Conversational UI",
