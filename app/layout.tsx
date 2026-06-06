@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import { VisitorTracker } from "@/components/portfolio/visitor-tracker";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { WelcomeScreen } from "@/components/welcome-screen";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         <WelcomeScreen />
         <SmoothScroll />
         <Navbar />
+        <VisitorTracker />
         {children}
       </body>
     </html>

@@ -34,3 +34,30 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Visitor Analytics
+
+The portfolio records lightweight pageview and visitor counts through
+`/api/analytics/visit`. Storage uses Upstash Redis REST, so no extra npm package
+is required.
+
+Set these environment variables in `.env.local` and in production:
+
+```bash
+UPSTASH_REDIS_REST_URL="https://..."
+UPSTASH_REDIS_REST_TOKEN="..."
+ANALYTICS_READ_TOKEN="choose-a-private-token"
+```
+
+Instagram link-in-bio visits are counted when the URL includes
+`utm_source=ig` or `utm_source=instagram`, for example:
+
+```text
+https://www.idzwork.my.id/?utm_source=ig&utm_medium=social&utm_content=link_in_bio
+```
+
+Read the private stats endpoint with:
+
+```text
+/api/analytics/stats?token=ANALYTICS_READ_TOKEN
+```
