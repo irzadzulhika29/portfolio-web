@@ -110,10 +110,12 @@ const Navbar = () => {
 
       {/* Right side: CTA button (pre-scroll) or empty spacer (scrolled) */}
       <a
-        href="#experience"
+        href="https://www.linkedin.com/in/irza-dzulhika/"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-white text-zinc-900 text-[14px] font-semibold hover:bg-white/90 transition-colors duration-200 shadow-sm"
       >
-        Experience
+        Connect
       </a>
     </div>
   );
