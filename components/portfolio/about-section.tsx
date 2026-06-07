@@ -52,6 +52,7 @@ function PhotoCard3D() {
           src="/fotodiri.png"
           alt="Irza"
         fill
+        sizes="(max-width: 1024px) 260px, 0px"
         className="object-cover rounded-3xl"
         style={{ transform: "translateZ(-20px) scale(1.1)" }}
         priority
