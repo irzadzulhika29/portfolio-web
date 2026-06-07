@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 
 export interface StaggeredMenuItem {
@@ -47,6 +48,7 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   accentColor = '#2f4539',
   isFixed = false,
   closeOnClickAway = true,
+  logoUrl,
   onMenuOpen,
   onMenuClose,
 }) => {
@@ -283,9 +285,13 @@ const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header className="staggered-menu-header pointer-events-none absolute left-0 top-0 z-20 flex w-full items-center justify-between bg-transparent p-6" aria-label="Main navigation header">
-          <a href="#top" className="font-bold text-2xl pointer-events-auto inline-flex items-center select-none text-white transition-colors duration-200" aria-label="Go to top">
-         idz
-         </a>
+          <a href="#top" className="pointer-events-auto inline-flex items-center select-none transition-colors duration-200" aria-label="Go to top">
+            {logoUrl ? (
+              <Image src={logoUrl} alt="Irza" width={36} height={36} />
+            ) : (
+              <span className="font-bold text-2xl text-white">idz</span>
+            )}
+          </a>
 
           <button
             ref={toggleBtnRef}
