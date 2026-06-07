@@ -49,7 +49,7 @@ function PhotoCard3D() {
     >
       {/* Background image */}
       <Image
-          src="/avatar.svg"
+          src="/fotodiri.png"
           alt="Irza"
         fill
         className="object-cover rounded-3xl"

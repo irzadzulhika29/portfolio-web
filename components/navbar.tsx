@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import StaggeredMenu from '@/components/react-bits/staggered-menu';
 import { cn } from '@/lib/utils';
 
@@ -81,14 +82,18 @@ const Navbar = () => {
       {/* Logo */}
       <a
         href="#top"
-        className={cn(
-          'inline-flex items-center text-5xl font-black tracking-[-0.04em] leading-none [text-shadow:0_0_0.01px_currentColor] transition-colors duration-200',
-          isAboutSection
-            ? "text-black"
-            : "text-white"
-        )}
+        className="inline-flex items-center"
       >
-        idz
+        <Image
+          src="/ir-mark.png"
+          alt="Irza"
+          width={64}
+          height={64}
+          className={cn(
+            'transition-opacity duration-200',
+            isAboutSection ? "opacity-100" : "opacity-100"
+          )}
+        />
       </a>
 
       <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 bg-zinc-900/90 backdrop-blur-md rounded-md px-2 py-3 shadow-lg">
@@ -147,7 +152,7 @@ const Navbar = () => {
           openMenuButtonColor="#ffffff"
           changeMenuColorOnOpen
           accentColor="#2f4539"
-          logoUrl="/ir-mark.svg"
+          logoUrl="/ir-mark.png"
           colors={['#7a887f', '#44574d']}
         />
       </div>
