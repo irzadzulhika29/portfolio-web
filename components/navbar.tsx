@@ -85,14 +85,11 @@ const Navbar = () => {
         className="inline-flex items-center"
       >
         <Image
-          src="/ir-mark.png"
+          src={isAboutSection ? "/ir-mark-black.png" : "/ir-mark.png"}
           alt="Irza"
           width={64}
           height={64}
-          className={cn(
-            'transition-opacity duration-200',
-            isAboutSection ? "opacity-100" : "opacity-100"
-          )}
+          className="transition-opacity duration-200"
         />
       </a>
 
@@ -152,7 +149,7 @@ const Navbar = () => {
           openMenuButtonColor="#ffffff"
           changeMenuColorOnOpen
           accentColor="#2f4539"
-          logoUrl="/ir-mark.png"
+          logoUrl={isAboutSection ? "/ir-mark-black.png" : "/ir-mark.png"}
           colors={['#7a887f', '#44574d']}
         />
       </div>
